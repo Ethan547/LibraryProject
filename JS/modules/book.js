@@ -1,46 +1,61 @@
-// Book's class
+/**
+ * Create a class called Book that has the following properties:
+ * Attributes:
+ * - title
+ * - author
+ * - ISBN
+ * - yearOfPublication
+ * - numberOfPages
+ * - borrowDuration (default: 14 days)
+ * - borrowedDate (default: null)
+ * 
+ * Methods:
+ * - isOverdue
+ * - daysOverdue
+ * - startCountdown
+ * - resetCountdown
+ */
 class Book {
-    // Required Inputs & Optional Inputs
-    constructor(id, name, description, author, year, genre) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
+    constructor(title, author, ISBN, yearOfPublication, numberOfPages, borrowDuration = 14) {
+        this.title = title;
         this.author = author;
-        this.year = year;
-        this.return_date = "";
-        this.genre = genre;
-        this.status = "CheckIn";
-        this.borrower = "";
-        this.library = "";
+        this.ISBN = ISBN;
+        this.yearOfPublication = yearOfPublication;
+        this.numberOfPages = numberOfPages;
+        this.borrowDuration = borrowDuration;
+        this.borrowedDate = null;
     }
-    // trackBorrowPeriod
-    trackBorrowPeriod(borrower){
-        // Create the date then start the countdown using a forloop
-        // Reference (Date): https://www.w3schools.com/js/js_dates.asp
-        // Reference (for-loop): https://www.w3schools.com/js/js_loop_for.asp
-        let today = new Date();
-        let days;
-        for (let i = 15; i > 0; i--){
-            if (i == 0){
-                days = 15;
-            }
+
+    isOverdue() {
+        if (this.borrowedDate === null) {
+            return false;
         }
-        today.setDate(today.getDay() + days);
+        const currentDate = new Date();
+        const dueDate = new Date(this.borrowedDate);
+        dueDate.setDate(dueDate.getDate() + this.borrowDuration);
+        return currentDate > dueDate;
     }
-    // CheckIn
-    checkIn(library){
-        library.addBook(this);
+
+    daysOverdue() {
+        if (this.borrowedDate === null) {
+            return 0;
+        }
+        const currentDate = new Date();
+        const dueDate = new Date(this.borrowedDate);
+        dueDate.setDate(dueDate.getDate() + this.borrowDuration);
+        const daysOverdue = Math.floor((currentDate - dueDate) / (1000 * 60 * 60 * 24));
+        return daysOverdue;
     }
-    // CheckOut
-    checkOut(borrower, library){
-        library.borrowABook(borrower, this);
-        this.status = "CheckedOut";
-        this.borrower = borrower;
-        this.library = library;
+
+    startCountdown() {
+        this.borrowedDate = new Date();
+
     }
-    // ReturnBook
-    return(borrower, library){
-        library.returnBook(borrower, this);
+
+    resetCountdown() {
+        this.borrowedDate = null;
     }
+
 }
+
 export default Book;

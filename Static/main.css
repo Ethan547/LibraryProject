@@ -1,15 +1,114 @@
-/* Style block for the HTML element with the class name main */
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
 .main {
     width: 100%;
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./GettyImages-577674005.webp");
 }
-/* Style card that contains 
-signup details */
-.library-card, .signup-card {
+
+/* Navbar STYLES START */
+.fancy-navbar {
+    background-color: #333;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.fancy-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fancy-navbar li {
+    padding: 15px;
+}
+
+.fancy-navbar a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.fancy-navbar a:hover {
+    color: #ffa500;
+}
+
+/* Navbar STYLES END */
+
+/* Sign Up CARD  START */
+
+/* Card styles */
+.signup-card {
+    background: #ffffff;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.signup-card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Form styles */
+.signup-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="email"],
+.signup-card input[type="number"] {
+    border: 1px solid #e1e4e8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+    outline: none;
+}
+
+.signup-card input[type="text"]:focus,
+.signup-card input[type="email"]:focus,
+.signup-card input[type="number"]:focus {
+    border-color: #0366d6;
+}
+
+.signup-card input[type="submit"] {
+    background-color: #0366d6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.signup-card input[type="submit"]:hover {
+    background-color: #024ea2;
+}
+
+/* Sign Up CARD  END */
+
+/* Style card that contains signup details */
+.library-card {
     width: 400px;
     height: 400px;
     background-color: #fff;
@@ -55,17 +154,3 @@ signup details */
     padding: 5px 10px;
     cursor: pointer;
 }
-
-.div {
-    text-decoration-style: solid;
-    text-decoration-color: forestgreen;
-}
-
-.form {
-    text-align: center;
-    background-color: blanchedalmond;
-    text-decoration-color: brown;
-}
-
-
-

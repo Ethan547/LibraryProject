@@ -1,0 +1,9 @@
+{
+    "name": "lesson_5",
+    "description": "Library for library, person, book",
+    "authors": "Me",
+    "version": "1.0.0",
+    "main": "main.js",
+    "dependencies": {},
+    "type":"module"
+}

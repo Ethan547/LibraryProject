@@ -1,0 +1,71 @@
+/* Style block for the HTML element with the class name main */
+.main {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./GettyImages-577674005.webp");
+}
+/* Style card that contains 
+signup details */
+.library-card, .signup-card {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.library-books-list {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Style a card that will contain book details */
+.book-item {
+    width: 300px;
+    height: 50%;
+    display: flex;
+    padding: 8px;
+    margin: 5px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* style the borrow button and make them primary blue like bootstrap */
+.borrow-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.div {
+    text-decoration-style: solid;
+    text-decoration-color: forestgreen;
+}
+
+.form {
+    text-align: center;
+    background-color: blanchedalmond;
+    text-decoration-color: brown;
+}
+
+
+

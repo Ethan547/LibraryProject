@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script type="module" src="addBook.js"></script>
+    <title>Add Books</title>
+</head>
+<body>
+    <!-- 
+        Define a navigation bar with the fields Home, AddBook, BorrowBook, AddUser 
+        > Create the HTML pages:
+            > Home: index.html
+            > AddBook: addBook.html
+            > BorrowBook: borrowBook.html
+            > AddUser: addUser.html
+        > Use a ul to create the navigation bar
+        > Each li tag should contain an anchor tag that takes the user to the right html page
+        > provide the html page to the href of the anchor tag
+    -->
+    <div id="navbar">
+        <ul>
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="addBook.html">AddBooks</a></li>
+            <li> <a href="borrowBook.html">BorrowBooks</a></li>
+            <li> <a href="addUser.html">AddUser</a></li>
+        </ul>
+    </div>
+    <div>
+        <form>
+            <input type="text" id="bookId" name="bookId" placeholder="Book Id" required>
+            <input type="text" id="bookName" name="bookName" placeholder="Book Name" required>
+            <input type="text" id="bookYear" name="bookYear" placeholder="Book Year" required>
+            <input type="text" id="bookDescription" name="bookDescription" placeholder="Book Description" required>
+            <input type="text" id="bookAuthor" name="bookAuthor" placeholder="Book Author" required>
+            <input type="text" id="bookGenre" name="bookGenre" placeholder="bookGenre" required> 
+            <input type="submit" id="addBookButton" value="Add Book">
+        </form>
+    </div>
+</body>
+</html>

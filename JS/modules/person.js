@@ -1,39 +1,63 @@
-import Library from "./library.js";
-// Person's class
+
+/**
+ * > Create a person class that has the following properties:
+ * Attributes:
+ * > - name
+ * > - age
+ * > - email
+ * > - borrowedBooks
+ * > - overdueBooks
+ * 
+ * Methods:
+ * > - borrowBook
+ * > - returnBook
+ * > - listBorrowedBooks
+ * > - listOverdueBooks
+ * > - subscribeToLibrary
+ * > - unsubscribeFromLibrary
+ */
 class Person {
-    constructor(name, email, city, birth_date) {
-        // Required Inputs
+    constructor(name, age, email) {
         this.name = name;
+        this.age = age;
         this.email = email;
-        this.city = city;
-        this.birth_date = birth_date;
-        // Optional Inputs
         this.borrowedBooks = [];
-        this.wishlist = [];
-        this.overdue_books = [];
+        this.overdueBooks = [];
     }
-    // Required input
-    /**
-     * @params {object} library - the library you're signing up tp
-     */
-    signUp(library){
-        // Check if the member already exists
-        if (library.members.includes(this)) {
-            console.log("This member already exists")
-        } else {
-            library.members.push(this)
+
+    borrowBook(book) {
+        if (book.isOverdue) {
+            this.overdueBooks.push(book);
+        }
+        this.borrowedBooks.push(book);
+    }
+
+    returnBook(book) {
+        const index = this.borrowedBooks.indexOf(book);
+        if (index > -1) {
+            this.borrowedBooks.splice(index, 1);
+        }
+        const overdueIndex = this.overdueBooks.indexOf(book);
+        if (overdueIndex > -1) {
+            this.overdueBooks.splice(overdueIndex, 1);
         }
     }
 
-    borrowBook(library, book){
-        // Check if the book exists in the list of library books
-        if(library.books.includes(book)) {
-            // Add it the the person's borrowed books
-            this.borrowedBooks.push(book);
-            // Add it the the library's borrowed books
-            library.borrowBook.push(book);
-            
-        }
+    listBorrowedBooks() {
+        return this.borrowedBooks;
+    }
+
+    listOverdueBooks() {
+        return this.overdueBooks;
+    }
+
+    subscribeToLibrary(library) {
+        library.addMember(this);
+    }
+
+    unsubscribeFromLibrary(library) {
+        library.removeMember(this);
     }
 }
+
 export default Person;

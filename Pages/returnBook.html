@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <script type="module" src="../js/scripts/returnBook.js"></script>
+    <title>Library Management System</title>
+</head>
+
+<body>
+    <nav class="fancy-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="addBook.html">Add Book</a></li>
+            <li><a href="borrowBook.html">Borrow Book</a></li>
+            <li><a href="returnBook.html">Return Book</a></li>
+            <li><a href="addUser.html">Add User</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <!-- 5. Return Book -->
+        <div id="returnBook" class="signup-card">
+            <div>
+                <h2>Return Book</h2>
+            </div>
+            <div>
+                <form method="post">
+                    <input type="text" name="bookName" placeholder="Book Name" required>
+                    <input type="text" name="bookAuthor" placeholder="Book Author" required>
+                    <input type="text" name="bookCategory" placeholder="Book Category" required>
+                    <input type="text" name="bookPublisher" placeholder="Book Publisher" required>
+                    <input type="text" name="bookPrice" placeholder="Book Price" required>
+                    <input type="text" name="bookQuantity" placeholder="Book Quantity" required>
+                    <input type="submit" value="Return Book">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

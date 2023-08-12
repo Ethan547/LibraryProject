@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <script type="module" src="borrowBook.js"></script>
-    <title>Borrow Books</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script type="module" src="../js/scripts/borrowBook.js"></script>
+    <title>Library Management System</title>
 </head>
+
 <body>
-    <!-- 
-        Define a navigation bar with the fields Home, AddBook, BorrowBook, AddUser 
-        > Create the HTML pages:
-            > Home: index.html
-            > AddBook: addBook.html
-            > BorrowBook: borrowBook.html
-            > AddUser: addUser.html
-        > Use a ul to create the navigation bar
-        > Each li tag should contain an anchor tag that takes the user to the right html page
-        > provide the html page to the href of the anchor tag
-    -->
-    <div id="navbar">
+    <nav class="fancy-navbar">
         <ul>
-            <li> <a href="index.html">Home</a></li>
-            <li> <a href="addBook.html">AddBooks</a></li>
-            <li> <a href="borrowBook.html">BorrowBooks</a></li>
-            <li> <a href="addUser.html">AddUser</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="addBook.html">Add Book</a></li>
+            <li><a href="borrowBook.html">Borrow Book</a></li>
+            <li><a href="returnBook.html">Return Book</a></li>
+            <li><a href="addUser.html">Add User</a></li>
         </ul>
+    </nav>
+
+    <!-- Create a form for borrowing a book -->
+    <div class="main">
+        <div id="borrowBook" class="signup-card">
+            <div>
+                <h2>Borrow Book</h2>
+            </div>
+            <div>
+                <form>
+                    <input type="text" id="bookName" name="bookName" placeholder="Book Name" required>
+                    <input type="text" id="bookId" name="bookId" placeholder="Book ID" required>
+                    <input type="text" id="memberName" name="memberName" placeholder="Member Name" required>
+                    <input type="text" id="memberId" name="memberId" placeholder="Member ID" required>
+                    <input type="submit" value="Borrow">
+                </form>
+            </div>
+        </div>
     </div>
 
-    <h2>Borrow A Book from Us</h2>
-        <!-- Create a form for borrowing a book -->
-        <form>
-            <div id="borrowBook" class="signup-card">
-                <div>
-                    <h2>Borrow Book</h2>
-                </div>
-                <div>
-                    <form>
-                        <input type="text" id="bookName" name="bookName" placeholder="Book Name" required>
-                        <input type="text" id="bookId" name="bookId" placeholder="Book ID" required>
-                        <input type="text" id="memberName" name="memberName" placeholder="Member Name" required>
-                        <input type="text" id="memberId" name="memberId" placeholder="Member ID" required>
-                        <input type="submit" value="Borrow">
-                    </form>
-                </div>
-            </div>
-        </form>
 </body>
+
 </html>
